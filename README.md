@@ -35,3 +35,5 @@ python eval.py \
        --test_id_file=test_id.txt \
        --output_file=eval_results.csv
 ```
+### combined segementation results:
+overal: {'acc': 0.654958224826389, 'dice': 0.33278754030098556, 'jacc': 0.23305891046529337, 'sensitivity': 0.41124765772288807, 'specificity': 0.7776283684302746}

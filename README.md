@@ -31,7 +31,7 @@ python float32_image_to_binary.py \
 ```
 python eval.py \
        --test_mask_path=../../images/combined_images/DRIVE_SKIN/test/1st_manual/ #dir of the groundtruth segmentation
-       --pre_mask_path=../results/combined \ #dir of the predicted segmentation from pred_to_img.py
+       --pred_mask_path=../results/combined \ #dir of the predicted segmentation from pred_to_img.py
        --test_id_file=test_id.txt \
        --output_file=eval_results.csv
 ```

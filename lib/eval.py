@@ -113,11 +113,27 @@ def main():
         metric = eval_metrics(true_mask, pred_mask)
         result.append(list(metric)[4:9])
     
+    results = dict(zip(img_idx, result))
+    
     with open(args.output_file, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerows(result)
-    metrics_ave = np.mean(np.array(result), axis=0)
-    print(dict(zip(['acc','dice','jacc','sensitivity','specificity'],metrics_ave)))
+        for key, value in results.items():
+            writer.writerow([key, value])
+        
+    skin_indices = [i for i, x in enumerate(img_idx) if "ISIC" in x]
+    retina_indices = [i for i, x in enumerate(img_idx) if "test" in x]
 
+    metrics_ave = np.mean(np.array(result), axis=0)
+    metrics_skin = np.mean(np.array(result)[skin_indices,:], axis=0)
+    metrics_retina = np.mean(np.array(result)[retina_indices,:], axis=0)
+    print('overall')
+    print(dict(zip(['acc','dice','jacc','sensitivity','specificity'], metrics_ave)))
+    
+    print('skin')
+    print(dict(zip(['acc','dice','jacc','sensitivity','specificity'], metrics_skin)))
+    
+    print('retina')
+    print(dict(zip(['acc','dice','jacc','sensitivity','specificity'], metrics_retina)))
+    
 if __name__ == '__main__':
     main()

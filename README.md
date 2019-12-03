@@ -36,22 +36,26 @@ python eval.py \
        --output_file=eval_results.csv
 ```
 ### combined segementation results:
+```
 'acc': 0.654958224826389
 'dice': 0.33278754030098556
 'jacc': 0.23305891046529337
 'sensitivity': 0.41124765772288807
 'specificity': 0.7776283684302746
-
+```
 ### skin
+```
 'acc': 0.6355805121527777
 'dice': 0.5758664698500824
 'jacc': 0.41251342780619504
 'sensitivity': 0.7697443611256081
 'specificity': 0.6005815002904619
-
+```
 ### retina
+```
 'acc': 0.6743359375000001
 'dice': 0.08970861075188859
 'jacc': 0.05360439312439177
 'sensitivity': 0.052750954320168
 'specificity': 0.9546752365700872
+```
